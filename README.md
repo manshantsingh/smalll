@@ -9,8 +9,8 @@ Example:
 <br><br><br>
 Working
 -------
-- The Backend REST API is working (v0.1)
-- You can access already shortened urls
+- A basic html webpage to shorten urls.
+- You can access already shortened urls.
 <br><br>
 
 ***Older method to add new shortened urls***
