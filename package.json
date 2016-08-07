@@ -1,0 +1,7 @@
+{
+  "name": "smalll",
+  "version": "1.0.0",
+  "description": "url shortener",
+  "main": "index.js",
+  "author": "Manshant Singh Kohli"
+}
