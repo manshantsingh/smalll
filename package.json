@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "description": "url shortener",
   "main": "index.js",
-  "author": "Manshant Singh Kohli"
+  "author": "Manshant Singh Kohli",
+  "repository":{
+	"type":"git",
+	"url":"git@github.com:manshantsingh/smalll.xyz.git"
+  },
+  "license": "UNLICENSED"
 }
+
