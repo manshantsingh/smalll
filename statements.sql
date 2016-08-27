@@ -1,26 +1,30 @@
 --urls: table--
 create table urls(
-	id int identity(1,1) primary key not null,
-	tiny nvarchar(20) constraint ux_tiny unique nonclustered not null,
+	id int AUTO_INCREMENT primary key not null,
+	tiny nvarchar(20) unique not null,
 	complete nvarchar(2083) not null,
-	timeAdded datetime default(getdate())
+	timeAdded timestamp default current_timestamp
 );
 
 
 
 --addurl: stored procedure--
-create procedure addurl(@tiny nvarchar(20), @complete nvarchar(2083))
-as
+delimiter $$
+create procedure addurl(in tiny nvarchar(20), in complete nvarchar(2083))
 begin
-	insert into urls(tiny, complete) values (@tiny, @complete);
+  insert into urls(tiny, complete) values (in_tiny, in_complete);
 end
+$$
+delimiter ;
 
 
 
 --geturl: stored function
-create function geturl(@tiny nvarchar(20))
-	returns nvarchar(2083)
-as
+delimiter $$
+create function geturl(tiny nvarchar(20))
+  returns nvarchar(2083)
 begin
-	return (select complete from urls where tiny=@tiny)
+  return (select complete from urls where tiny=@tiny);
 end
+$$
+delimiter ;
