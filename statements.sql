@@ -12,7 +12,7 @@ create table urls(
 delimiter $$
 create procedure addurl(in tiny nvarchar(20), in complete nvarchar(2083))
 begin
-  insert into urls(tiny, complete) values (tiny, complete);
+	insert into urls(tiny, complete) values (tiny, complete);
 end
 $$
 delimiter ;
@@ -21,10 +21,10 @@ delimiter ;
 
 --geturl: stored function
 delimiter $$
-create function geturl(tiny nvarchar(20))
-  returns nvarchar(2083)
+create function geturl(in_tiny nvarchar(20))
+	returns nvarchar(2083)
 begin
-  return (select complete from urls where tiny=@tiny);
+	return (select complete from urls where tiny=in_tiny);
 end
 $$
 delimiter ;
