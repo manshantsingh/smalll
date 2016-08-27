@@ -12,7 +12,7 @@ create table urls(
 delimiter $$
 create procedure addurl(in tiny nvarchar(20), in complete nvarchar(2083))
 begin
-  insert into urls(tiny, complete) values (in_tiny, in_complete);
+  insert into urls(tiny, complete) values (tiny, complete);
 end
 $$
 delimiter ;
