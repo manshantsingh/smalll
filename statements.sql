@@ -5,6 +5,8 @@ create table urls(
 	complete nvarchar(2083) not null,
 	timeAdded timestamp default current_timestamp
 );
+--add index on tiny
+create index tiny_index_hash on urls(tiny) using HASH;
 
 
 
