@@ -30,6 +30,13 @@ app.post('/addurl', function(req, res){
 	}
 });
 
+// For backup from other server only. Should barely get here
+app.post('/isms', function(req, res) {
+	// Add an sms parser here for yourself :)
+	console.log('req: ', req);
+	res.send('SMS recieved');
+});
+
 var connection = mysql.createConnection({
 	host		: process.env.DB_host,
 	user		: process.env.DB_user,
