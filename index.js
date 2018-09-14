@@ -24,8 +24,8 @@ app.post('/addurl', function(req, res){
 
 	if(tiny && complete){
 		connection.query('call addurl(?, ?);',[tiny, complete], function(err, rows, fields) {
-			if(err) res.send('Something went wrong.\nMost likely smalll.xyz/'+tiny+' is already taken.');
-			else res.send('URL shortcut added.\nsmalll.xyz/'+tiny+' should redirect you to '+complete);
+			if(err) res.send('Something went wrong.\nMost likely tiny.ms/'+tiny+' is already taken.');
+			else res.send('URL shortcut added.\ntiny.ms/'+tiny+' should redirect you to '+complete);
 		});
 	}
 });
