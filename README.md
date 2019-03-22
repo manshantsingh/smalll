@@ -26,16 +26,11 @@ Just replace "short" and "https&#8203;://yourwebsite.&#8203;com/yourwebpage.html
 
 >curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'tiny=short&complete=https​://yourwebsite.​com/yourwebpage.html' "http​://tiny.​ms/addurl"
 
-
-
-<br><br><br>
 Working
 -------
 - A basic html webpage to shorten urls.
 - You can access already shortened urls.
-<br><br>
 
-<br><br><br>
 Coming Soon
 -----------
 - ***An interactive UI which adds to the overall experience of the user.***
