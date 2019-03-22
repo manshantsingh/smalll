@@ -33,4 +33,4 @@ Working
 
 Coming Soon
 -----------
-- ***An interactive UI which adds to the overall experience of the user.***
+- ***A beautiful UI***
