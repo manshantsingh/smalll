@@ -7,10 +7,27 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+
+app.get('/ytd', function(req, res){
+	var url = req.query.url;
+	if(url){
+		var arr = url.split("/");
+		var id = arr[arr.length-1];
+		console.log("first split arr:", arr,"\nid:", id);
+		arr = url.split("=");
+		id = arr[arr.length-1];
+		console.log("first second arr:", arr,"\nid:", id);
+		res.redirect("http://k.manshantsingh.com:9827/"+id);
+	}
+	else{
+		res.send("missing param 'url'");
+	}
+});
+
 app.get('/:tiny', function(req, res){
 	connection.query('select geturl(?) as complete;',req.params.tiny, function(err, rows) {
-		if(err) throw err;
-		res.redirect(rows[0].complete);
+		if(err || !rows[0].complete) res.send("not-found");
+		else res.redirect(rows[0].complete);
 	});
 });
 
